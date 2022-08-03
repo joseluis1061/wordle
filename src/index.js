@@ -37,8 +37,7 @@ fetchApi();
 
 /*Generate screen of answers */
 const gridContructor = ()=>{
-  console.log('secretWord***')
-  console.log(secretWord)
+  //console.log('secretWord: '+secretWord)
   for(let i=0; i<lives; i++){
     const ulist = document.createElement('ul');
     ulist.className = `list_container`
@@ -115,7 +114,11 @@ const pressLetter = (event)=>{
     gridLeter.innerHTML= button.id;
     numberLeter++;
   }else{
-    console.log('Palabra llena')
+    const resultsH = document.querySelector("h2");
+    resultsH.innerHTML = "¡Palabra llena!";
+    setTimeout(()=>{
+      resultsH.innerHTML = "";
+    },1500);
   }
 }
 
@@ -131,12 +134,10 @@ const checkWord = ()=>{
   if(intents === (lives-1)){
     if(myAnswer.join("")===secretWord.join("")){
       resultsH.innerHTML = "¡Has Ganado!";
-      console.log("Has Ganado");
       reiniciarTablero();
       return
     }else{
       resultsH.innerHTML = "¡Has Perdido!";
-      console.log("Perdio");
       matchAnswer();
       reiniciarTablero();
       return
@@ -164,7 +165,6 @@ const matchAnswer = ()=>{
     }
     
     positions.map((item, letter)=>{
-      console.log(`${item}`)
       const liItem = document.querySelector(`.listElement${intents}${letter}`);
       liItem.className = `listElement listElement${intents}${letter} ${item}`;
     });
@@ -173,7 +173,11 @@ const matchAnswer = ()=>{
     intents++;
     numberLeter=0;
   }else{
-    console.log("Your answer not's same to secret word");
+    const resultsH = document.querySelector("h2");
+    resultsH.innerHTML = "Tu palabra esta vacia";
+    setTimeout(()=>{
+      resultsH.innerHTML = "";
+    },1500);
   }
 };
 //Delete letter of answer
@@ -185,7 +189,11 @@ const deleteLetter = ()=>{
     gridLeter.innerHTML= "";
   }
   else{
-    console.log('Tu palabra esta vacia');
+    const resultsH = document.querySelector("h2");
+    resultsH.innerHTML = "Tu palabra esta vacia";
+    setTimeout(()=>{
+      resultsH.innerHTML = "";
+    },1500);
   }
 };
 

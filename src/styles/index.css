@@ -150,4 +150,7 @@ li{
   padding: 10px;
   border: nonde;
   border-radius: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
 }
