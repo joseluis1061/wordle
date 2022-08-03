@@ -1,5 +1,5 @@
+import "./styles/main.css";
 const keyboard = document.querySelector("#keyboard");
-
 const keyboardLeters =[
   ["q","w","e","r","t","y","u","i","o","p"],
   ["a","s","d","f","g","h","j","k","l","ñ"],
@@ -13,7 +13,7 @@ let myAnswer = [];
 let secretWord = ["p","l","a","t","z","i"];
 let positions = [];
 const grid = document.querySelector("#grid");
-const lives = 2; //Number of intents
+const lives = 4; //Number of intents
 let liNodes = []; //List of li 
 let ulNodes = []; //List of ul
 let intents = 0; //Lost lives
