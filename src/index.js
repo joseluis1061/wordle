@@ -76,25 +76,25 @@ keyboardLeters.map(letters =>{
   const ulist = document.createElement('ul');
   letters.map(letter =>{
     const listItem = document.createElement('li');
-
+    
     switch(letter){
       case("enter"):
         listItem.innerHTML=`
-          <button class="btn btn_control" onclick="checkWord(event)" id=${letter}>
+          <button class="btn btn_control" click="checkWord()" id=${letter}>
             ${letter}
           </button>`;
         break;
 
       case("delete"):
         listItem.innerHTML=`
-          <button class="btn btn_control" onclick="deleteLetter(event)" id=${letter}>
+          <button class="btn btn_control" click="deleteLetter()" id=${letter}>
             ${letter}
           </button>`;
         break;
 
       default:
       listItem.innerHTML=`
-        <button class="btn btn_letter" onclick="pressLetter(event)" id=${letter}>
+        <button class="btn btn_letter" click="pressLetter()" id=${letter}>
           ${letter}
         </button>`;
         break;
@@ -107,6 +107,7 @@ keyboard.append(...listElements);
 
 /*Detect letter press */
 const pressLetter = (event)=>{
+  console.log('pressLetter')
   const button = event.target;
   if(myAnswer.length < secretWord.length){
     myAnswer.push(button.id);
@@ -120,10 +121,11 @@ const pressLetter = (event)=>{
       resultsH.innerHTML = "";
     },1500);
   }
-}
+};
 
 //Detect win or lose
 const checkWord = ()=>{ 
+  console.log('CheckWord')
   const resultsH = document.querySelector("h2");
   if(myAnswer.join("")===secretWord.join("")){
     resultsH.innerHTML = "¡Has Ganado!";
@@ -144,10 +146,10 @@ const checkWord = ()=>{
     }
   }
   matchAnswer();
-  
 };
 /*Detect and display match letters */
 const matchAnswer = ()=>{
+  console.log('matchAnswer')
   //List of colors in match answer
   if(myAnswer.length === secretWord.length){
     for(let i = 0 ; i < secretWord.length; i++){
@@ -182,6 +184,7 @@ const matchAnswer = ()=>{
 };
 //Delete letter of answer
 const deleteLetter = ()=>{
+  console.log('deleteLetter')
   if(myAnswer.length>0){
     myAnswer.pop();
     numberLeter--;
@@ -200,5 +203,6 @@ const deleteLetter = ()=>{
 //New answerd
 const newAnswerd = document.querySelector('.new_answerd');
 newAnswerd.addEventListener('click', ()=>{
+  console.log('newAnswerd')
   reiniciarTablero();
 })
