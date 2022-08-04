@@ -76,27 +76,31 @@ keyboardLeters.map(letters =>{
   const ulist = document.createElement('ul');
   letters.map(letter =>{
     const listItem = document.createElement('li');
-    
+    let boton = document.createElement('button');
+
     switch(letter){
       case("enter"):
-        listItem.innerHTML=`
-          <button class="btn btn_control" click="checkWord()" id=${letter}>
-            ${letter}
-          </button>`;
+        boton.addEventListener('click', (e)=>checkWord(e))
+        boton.id = `${letter}`;
+        boton.innerHTML = `${letter}`;
+        boton.className = 'btn btn_control';
+        listItem.appendChild(boton);
         break;
 
       case("delete"):
-        listItem.innerHTML=`
-          <button class="btn btn_control" click="deleteLetter()" id=${letter}>
-            ${letter}
-          </button>`;
+        boton.addEventListener('click', (e)=>deleteLetter(e))
+        boton.id = `${letter}`;
+        boton.innerHTML = `${letter}`;
+        boton.className = 'btn btn_control';
+        listItem.appendChild(boton)
         break;
 
       default:
-      listItem.innerHTML=`
-        <button class="btn btn_letter" click="pressLetter()" id=${letter}>
-          ${letter}
-        </button>`;
+        boton.addEventListener('click', (e)=>pressLetter(e))
+        boton.id = `${letter}`;
+        boton.innerHTML = `${letter}`;
+        boton.className = 'btn btn_letter';
+        listItem.appendChild(boton)
         break;
     }
     ulist.appendChild(listItem);
@@ -139,7 +143,7 @@ const checkWord = ()=>{
       reiniciarTablero();
       return
     }else{
-      resultsH.innerHTML = "¡Has Perdido!";
+      resultsH.innerHTML = `¡Has Perdido! = > ${secretWord.join("")}`;
       matchAnswer();
       reiniciarTablero();
       return
@@ -179,7 +183,7 @@ const matchAnswer = ()=>{
     resultsH.innerHTML = "Tu palabra esta vacia";
     setTimeout(()=>{
       resultsH.innerHTML = "";
-    },1500);
+    },2000);
   }
 };
 //Delete letter of answer
