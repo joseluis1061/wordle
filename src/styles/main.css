@@ -153,10 +153,8 @@ li{
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  /* background-color: #d7c841; */
+  background-color: #d7c841;
   backdrop-filter: blur(15px);
-  color: white;
-  border: 1px solid white;
 }
 
 /**new_answerd*/
