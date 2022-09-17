@@ -19,8 +19,7 @@ let ulNodes = []; //List of ul
 let intents = 0; //Lost lives
 let numberLeter = 0; //Number of letter in screen's answer
 /*Random word */
-//const API = 'https://palabras-aleatorias-public-api.herokuapp.com/random';
-const API = 'https://clientes.api.greenborn.com.ar/public-random-word';
+const API = 'https://random-word-api.herokuapp.com/word?lang=es&length=5';
 const fetchApi = async()=>{
   const response = await fetch(API);
   const data = await response.json();
@@ -29,6 +28,7 @@ const fetchApi = async()=>{
   } 
   let newWord = removeAccents(data[0]).toLowerCase();
   newWord = newWord.split('');
+  console.log(newWord);
   secretWord = newWord;
   gridContructor()
   return newWord;
@@ -111,7 +111,7 @@ keyboard.append(...listElements);
 
 /*Detect letter press */
 const pressLetter = (event)=>{
-  console.log('pressLetter')
+
   const button = event.target;
   if(myAnswer.length < secretWord.length){
     myAnswer.push(button.id);
@@ -129,7 +129,7 @@ const pressLetter = (event)=>{
 
 //Detect win or lose
 const checkWord = ()=>{ 
-  console.log('CheckWord')
+  console.log(secretWord)
   const resultsH = document.querySelector("h2");
   if(myAnswer.join("")===secretWord.join("")){
     resultsH.innerHTML = "¡Has Ganado!";
@@ -153,7 +153,6 @@ const checkWord = ()=>{
 };
 /*Detect and display match letters */
 const matchAnswer = ()=>{
-  console.log('matchAnswer')
   //List of colors in match answer
   if(myAnswer.length === secretWord.length){
     for(let i = 0 ; i < secretWord.length; i++){
@@ -188,7 +187,6 @@ const matchAnswer = ()=>{
 };
 //Delete letter of answer
 const deleteLetter = ()=>{
-  console.log('deleteLetter')
   if(myAnswer.length>0){
     myAnswer.pop();
     numberLeter--;
@@ -207,6 +205,5 @@ const deleteLetter = ()=>{
 //New answerd
 const newAnswerd = document.querySelector('.new_answerd');
 newAnswerd.addEventListener('click', ()=>{
-  console.log('newAnswerd')
   reiniciarTablero();
 })

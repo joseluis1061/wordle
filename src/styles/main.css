@@ -1,7 +1,7 @@
 :root{
   --black: #000000;
   --coffe: rgb(61, 56, 56);
-  --green: #1A4D2E;
+  --green: #38a965;
   --orange: #FF9F29;
   --belge: #FAF3E3;
 }
@@ -17,7 +17,7 @@ html{
 body{
   font-family: 'Roboto', sans-serif;
   background-color: var(--coffe);
-  background-color: rgb(29, 15, 93);
+  background-color: white;
 }
 li{
   list-style: none;
@@ -35,15 +35,17 @@ li{
   display: flex;
   flex-direction: column;
   align-items: center;  
+  width: 90vw;
   margin: 0 auto;
 }
 .main h1{
   font-size: 3.5rem;
-  color: white;
+  color: black;
 }
 .main h2{
   font-size: 3rem;
   color: white;
+  color: red;
 }
 
 /**Results***/
@@ -63,15 +65,13 @@ li{
 }
 /*****/
 #keyboard{
+  width: 100%;
   display: flex;
   flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
   gap: 10px;
   padding: 10px;
-  border: 3px solid rgb(182, 12, 12);
-  border-radius: 15px;
-  box-shadow: 5px 7px 3px rgba(0, 0, 0, 0.4);
 }
 #keyboard ul{
   display: flex;
@@ -82,19 +82,23 @@ li{
 }
 .btn{
   font-size: 2rem;
-  padding: 5px;
+  padding: 15px;
   background-color: transparent;
   border-radius: 10px;
   box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(15px);
-  color: var(--orange);
+  color: white;
+  font-weight: 700;
   background-color: var(--green);
   border: 2px solid var(--belge);
   transition: all 0.5s ease-out;
+  max-width: 120px;
+  max-height: 90px;
 }
 @media(min-width: 650px){
   .btn{
-    min-width: 40px;
+    min-width: 60px;
+    min-height: 60px;
   }
 }
 .btn:hover{
@@ -107,12 +111,18 @@ li{
 /******Colors***/
 .listElement.green{
   background-color: greenyellow;
+  border: none;
 }
 .listElement.marron{
-  background-color: maroon;
+  background-color: rgb(182, 44, 44);
+  color: white;
+  border: none;
+
 }
 .listElement.gray{
   background-color: gainsboro;
+  border: none;
+
 }
 
 /*****GRID******/
@@ -133,16 +143,16 @@ li{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1px;
+  gap: 10px;
   padding: 5px;
   z-index: -2;
-  border: 1px solid #d7c841;;
   border-radius: 15px;
   padding: 5px 0;
+  height: 55px;
 }
 
 .listElement{
-  height: 30px;
+  height: 50px;
   width: 100%;
   min-width: 20px;
   max-width: 60px;
@@ -153,7 +163,10 @@ li{
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  background-color: #d7c841;
+  border: 3px solid #b9b4b4;
+  color: black;
+  font-weight: bold;
+  height: 45px;
   backdrop-filter: blur(15px);
 }
 
@@ -161,9 +174,9 @@ li{
 .new_answerd{
   margin-top: 15px;
   padding: 10px;
-  border: nonde;
+  border: none;
   border-radius: 15px;
   font-size: 1.8rem;
   font-weight: bold;
-  box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
