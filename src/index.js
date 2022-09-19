@@ -19,7 +19,7 @@ let ulNodes = []; //List of ul
 let intents = 0; //Lost lives
 let numberLeter = 0; //Number of letter in screen's answer
 /*Random word */
-const API = 'https://random-word-api.herokuapp.com/word?lang=es&length=5';
+const API = 'https://random-word-api.herokuapp.com/word?lang=es&length=6';
 const fetchApi = async()=>{
   const response = await fetch(API);
   const data = await response.json();
@@ -68,7 +68,7 @@ const reiniciarTablero = () =>{
     const resultsH = document.querySelector("h2");
     resultsH.innerHTML = "";
     fetchApi();
-  },1500)
+  },2500);
 };
 
 //Generate board's buttons 
@@ -82,7 +82,8 @@ keyboardLeters.map(letters =>{
       case("enter"):
         boton.addEventListener('click', (e)=>checkWord(e))
         boton.id = `${letter}`;
-        boton.innerHTML = `${letter}`;
+        // boton.innerHTML = `${letter}`;
+        boton.innerHTML = `<i class="fa-solid fa-right-to-bracket"></i>`;
         boton.className = 'btn btn_control';
         listItem.appendChild(boton);
         break;
@@ -90,7 +91,7 @@ keyboardLeters.map(letters =>{
       case("delete"):
         boton.addEventListener('click', (e)=>deleteLetter(e))
         boton.id = `${letter}`;
-        boton.innerHTML = `${letter}`;
+        boton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
         boton.className = 'btn btn_control';
         listItem.appendChild(boton)
         break;
@@ -182,7 +183,7 @@ const matchAnswer = ()=>{
     resultsH.innerHTML = "Tu palabra esta vacia";
     setTimeout(()=>{
       resultsH.innerHTML = "";
-    },2000);
+    },2500);
   }
 };
 //Delete letter of answer

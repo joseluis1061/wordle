@@ -16,7 +16,6 @@ html{
 }
 body{
   font-family: 'Roboto', sans-serif;
-  background-color: var(--coffe);
   background-color: white;
 }
 li{
@@ -35,7 +34,7 @@ li{
   display: flex;
   flex-direction: column;
   align-items: center;  
-  width: 90vw;
+  width: 95vw;
   margin: 0 auto;
 }
 .main h1{
@@ -44,12 +43,13 @@ li{
 }
 .main h2{
   font-size: 3rem;
+  text-align: center;
   color: white;
   color: red;
 }
 
 /**Results***/
-.results{
+/* .results{
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -62,18 +62,19 @@ li{
   min-width: 100px;
   color: black;
   font-weight: bold;
-}
+} */
 /*****/
 #keyboard{
   width: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  
   margin: 0 auto;
   gap: 10px;
   padding: 10px;
 }
 #keyboard ul{
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -81,33 +82,38 @@ li{
   gap: 3px;
 }
 .btn{
-  font-size: 2rem;
-  padding: 15px;
-  background-color: transparent;
+  width: 28px;
+  height: 45px;
+  font-size: 1.5rem;
   border-radius: 10px;
-  box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(15px);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   color: white;
   font-weight: 700;
-  background-color: var(--green);
-  border: 2px solid var(--belge);
+  background-color: #b9b4b4;
+  border: none;
   transition: all 0.5s ease-out;
-  max-width: 120px;
-  max-height: 90px;
+  text-align: center;
+
 }
-@media(min-width: 650px){
+@media(min-width: 530px){
   .btn{
-    min-width: 60px;
-    min-height: 60px;
+    width: 45px;
+  }
+}
+@media(min-width: 750px){
+  .btn{
+    padding: 10px; 
+    font-size: 2rem;
+    min-width: 55px;
+    min-height: 55px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   }
 }
 .btn:hover{
   background-color: var(--belge);
   color:var(--black);
 }
-/* .btn_letter{
-  max-width: 50px;
-} */
+
 /******Colors***/
 .listElement.green{
   background-color: greenyellow;
@@ -130,7 +136,6 @@ li{
   width: 100%;
   min-width: 300px;
   margin: 0 auto;
-  margin: 25px ;
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -139,12 +144,12 @@ li{
 }
 .list_container{
   width: 100%;
+  margin-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 5px;
   z-index: -2;
   border-radius: 15px;
   padding: 5px 0;
@@ -152,10 +157,9 @@ li{
 }
 
 .listElement{
-  height: 50px;
-  width: 100%;
-  min-width: 20px;
-  max-width: 60px;
+  height: 45px;
+  width: auto;
+  min-width: 40px;
   font-size: 2rem;
   text-align: center;
   border-radius: 10px;
@@ -166,8 +170,13 @@ li{
   border: 3px solid #b9b4b4;
   color: black;
   font-weight: bold;
-  height: 45px;
   backdrop-filter: blur(15px);
+}
+@media(min-width: 750px){
+  .listElement{
+    height: 55px;
+    width: 50px;
+  }
 }
 
 /**new_answerd*/
@@ -178,5 +187,5 @@ li{
   border-radius: 15px;
   font-size: 1.8rem;
   font-weight: bold;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 2px rgba(30, 29, 29, 0.4);
 }
