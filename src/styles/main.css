@@ -46,7 +46,10 @@ li{
   text-align: center;
   color: rgb(174, 29, 29);
 }
-
+.credenciales a{
+  text-decoration: none;
+  color: var(--orange)
+}
 /*****/
 #keyboard{
   width: 100%;
@@ -170,20 +173,25 @@ li{
   padding: 10px;
   border: none;
   border-radius: 10px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   box-shadow: 2px 2px 2px rgba(30, 29, 29, 0.4);
 }
 
+
 /*Modal Instructions*/
 .modal-intruccions{
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
-  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 15px 15px;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 .modal-container{
   max-width: 500px;
