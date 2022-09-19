@@ -1,8 +1,8 @@
 :root{
   --black: #000000;
   --coffe: rgb(61, 56, 56);
-  --green: #38a965;
-  --orange: #FF9F29;
+  --green: #6aaa64;
+  --orange: #c9b458;
   --belge: #FAF3E3;
 }
 
@@ -17,6 +17,7 @@ html{
 body{
   font-family: 'Roboto', sans-serif;
   background-color: white;
+  font-size: 1.6rem;
 }
 li{
   list-style: none;
@@ -28,7 +29,6 @@ li{
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .main_container{
   display: flex;
@@ -44,25 +44,9 @@ li{
 .main h2{
   font-size: 3rem;
   text-align: center;
-  color: white;
-  color: red;
+  color: rgb(174, 29, 29);
 }
 
-/**Results***/
-/* .results{
-  margin-top: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-items: center;
-  align-items: center;
-}
-.results li.listElement{
-  padding: 15px;
-  min-width: 100px;
-  color: black;
-  font-weight: bold;
-} */
 /*****/
 #keyboard{
   width: 100%;
@@ -116,11 +100,11 @@ li{
 
 /******Colors***/
 .listElement.green{
-  background-color: greenyellow;
+  background-color: var(--green);
   border: none;
 }
 .listElement.marron{
-  background-color: rgb(182, 44, 44);
+  background-color: var(--orange);
   color: white;
   border: none;
 
@@ -167,10 +151,11 @@ li{
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: 3px solid #b9b4b4;
+  border: 3px solid #6e6b6b;
   color: black;
   font-weight: bold;
   backdrop-filter: blur(15px);
+  text-transform: uppercase;
 }
 @media(min-width: 750px){
   .listElement{
@@ -184,8 +169,80 @@ li{
   margin-top: 15px;
   padding: 10px;
   border: none;
-  border-radius: 15px;
-  font-size: 1.8rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
   font-weight: bold;
   box-shadow: 2px 2px 2px rgba(30, 29, 29, 0.4);
+}
+
+/*Modal Instructions*/
+.modal-intruccions{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+  padding: 15px 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modal-container{
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+}
+.word-example{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.word-example > li{
+  width: 40px;
+  padding: 10px 10px;
+  border: 4px solid black;
+  list-style: none;
+}
+
+.word-green{
+  background-color: var(--green);
+  border: none;
+}
+.word-orange{
+  background-color: #c9b458;
+  color: white;
+  border: none;
+
+}
+.word-gray{
+  background-color: gainsboro;
+  border: none;
+}
+.modal-container p {
+  text-align: justify;
+}
+.modal-container p > span{
+  font-weight: bold;
+}
+.modal-container > hr{
+  font-weight: bold;
+  color: red;
+  border: 1px solid green;
+}
+.modal-close{
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  background-color: var(--green);
+  color: white;
+  font-size: bold;
+}
+.display_none{
+  display: none;
 }

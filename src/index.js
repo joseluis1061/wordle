@@ -13,7 +13,7 @@ let myAnswer = [];
 let secretWord = ["p","l","a","t","z","i"];
 let positions = [];
 const grid = document.querySelector("#grid");
-const lives = 4; //Number of intents
+const lives = 5; //Number of intents
 let liNodes = []; //List of li 
 let ulNodes = []; //List of ul
 let intents = 0; //Lost lives
@@ -208,3 +208,9 @@ const newAnswerd = document.querySelector('.new_answerd');
 newAnswerd.addEventListener('click', ()=>{
   reiniciarTablero();
 })
+//Modal
+const modalClose = document.querySelector('.modal-close');
+modalClose.addEventListener('click', ()=>{
+  const modalIntructions = document.querySelector('.modal-intruccions');
+  modalIntructions.className = 'display_none';  
+});
