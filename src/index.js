@@ -10,7 +10,7 @@ const keyboardLeters =[
 /*Initial vars*/
 const listElements = [];
 let myAnswer = [];
-let secretWord = ["p","l","a","t","z","i"];
+let secretWord = ["e","x","i","t","o"];
 let positions = [];
 const grid = document.querySelector("#grid");
 const lives = 5; //Number of intents
@@ -210,7 +210,25 @@ newAnswerd.addEventListener('click', ()=>{
 })
 //Modal
 const modalClose = document.querySelector('.modal-close');
+const modalIntructions = document.querySelector('.modal-intruccions');
+
 modalClose.addEventListener('click', ()=>{
-  const modalIntructions = document.querySelector('.modal-intruccions');
-  modalIntructions.className = 'display_none';  
+  modalIntructions.className += ' display_none';  
+});
+
+const modalOpen = document.querySelector('.modal-open');
+modalOpen.addEventListener('click', ()=>{
+  modalIntructions.classList.remove('display_none');  
+});
+
+//Settings
+const settingBtn = document.querySelector('.setting-btn');
+const btnCerrar = document.querySelector('.btn-cerrar');
+const settings = document.querySelector('.settings');
+settingBtn.addEventListener('click', ()=>{
+  settings.classList.remove('display_none');
+});
+
+btnCerrar.addEventListener('click', ()=>{
+  settings.className += ' display_none'; 
 });
